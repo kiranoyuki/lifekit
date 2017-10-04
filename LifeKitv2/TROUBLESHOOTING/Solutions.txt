@@ -1,0 +1,31 @@
+if cannot locate main.js
+---> run " npm rebuild node-sass"
+if cannot do CORS, serve from the server and access it or run from the phone
+if cannot ionic serve with a script-ionic error, then run npm install
+if flash light plugin required
+---> ionic plugin add cordova-plugin-flashlight
+if vibrate required
+--->ionic plugin add cordova-plugin-vibration
+if need native audio
+--->ionic plugin add cordova-plugin-nativeaudio
+if need geolocation
+--->ionic plugin add cordova-plugin-geolocation
+if need contact list from phone
+---> ionic plugin add cordova-plugin-contacts
+if need dialog box 
+-->ionic plugin add cordova-plugin-dialogs
+if need chart.js 
+-->npm install chart.js --save
+if used navigator launcher have to install following
+--> npm install --save @ionic-native/launch-navigator
+    ionic plugin add cordova-plugin-request-location-accuracy
+if need filesystem
+-->$ ionic plugin add cordova-plugin-file
+if need SMS
+-->ionic plugin add cordova-sms-plugin
+if google map doesn't work
+--> https://developers.google.com/maps/documentation/javascript/get-api-key , get the api key and then do this
+--> https://ionicframework.com/docs/native/google-maps/
+
+
+

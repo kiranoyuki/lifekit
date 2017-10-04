@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <h1 color = "teal" align = "center">Home</h1>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- opioid user content -->
+    <opioid-users  [hidden]="onDutyToggled"></opioid-users>
+
+
+  <!-- carrier user content -->
+    <carrier [onDutyToggled] = "onDutyToggled" [hidden] = "!onDutyToggled"></carrier>
+
+
+  <!-- carrier settings -->
+  <div class="carrier-settings static-bottom">
+      <div>
+        <ion-label class="text-margin text-label">For Carrier</ion-label>
+      </div>
+
+    <!-- Toggle control -->
+      <div>
+        <ion-row center>
+          <ion-col col-6>
+            <div class="center-toggle">
+              <ion-label text-center class="label-text-color"> On Duty</ion-label>
+              <ion-toggle color="teal" [(ngModel)]="onDutyToggled" (ionChange)="notifyOnDuty()" ></ion-toggle>
+            </div>
+          </ion-col>
+          <ion-col col-6>
+            <div class="center-toggle">
+              <ion-label text-center class="label-text-color"> Has Naloxone</ion-label>
+              <ion-toggle color="teal"></ion-toggle>
+
+              <!--              <ion-toggle [(ngModel)]="hasNaloxoneToggled" (ionChange)="notifyHasNaloxone()"></ion-toggle> !-->
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+</ion-content>

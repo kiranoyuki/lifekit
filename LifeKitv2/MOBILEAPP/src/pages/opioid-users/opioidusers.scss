@@ -1,0 +1,39 @@
+@import "ionic.globals";
+
+.ios, .md {
+
+  opioid-users {
+
+    .scroll-content {
+      background-color: map-get($colors, light);
+    }
+
+    ion-card-header {
+      font-weight: bold;
+    }
+
+    .card {
+      //margin-top: 50px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .card .item-text-wrap {
+      font-weight: bold;
+      //height: 80%;
+      display: inline-block;
+      margin: 10%;
+    }
+
+    .emergency-button {
+      margin-bottom: 40%;
+
+    }
+
+    h5 {
+      color: #7c868a;
+    }
+
+  }
+
+}

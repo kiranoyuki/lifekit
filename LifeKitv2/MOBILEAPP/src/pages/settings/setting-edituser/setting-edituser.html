@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+        <h1 color = "teal" align = "center">User Settings</h1>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item-group>
+        <ion-item-divider color="light">Basic Info:</ion-item-divider>
+            <ion-item>
+                <ion-label>First Name</ion-label>
+                <ion-input [(ngModel)]="userSettings.firstName" type = "text"></ion-input>
+            </ion-item>
+        <ion-item>
+            <ion-label>Last Name</ion-label>
+            <ion-input [(ngModel)]="userSettings.lastName" type = "text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Age</ion-label>
+            <ion-input [(ngModel)]="userSettings.age" type = "number"></ion-input>
+        </ion-item>
+    </ion-item-group>
+
+    <ion-item-group>
+        <ion-item-divider color="light">Frequent Addresses:</ion-item-divider>
+        <ion-item *ngFor="let address of userSettings.addresses ">
+          <ion-label>{{address.toString()}}</ion-label>
+        </ion-item>
+    </ion-item-group>
+    <p align = "center">
+        <button ion-button color ="teal" round outline>Save</button>
+        <button ion-button color="teal" round outline>Exit</button>
+    </p>
+</ion-content>

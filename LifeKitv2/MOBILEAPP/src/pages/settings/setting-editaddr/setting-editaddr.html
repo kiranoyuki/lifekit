@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+        <h1 color = "teal" align = "center">Add Address</h1>
+    </ion-navbar>
+</ion-header>
+<ion-content no-bounce>
+    <ion-item-group>
+        <ion-item-divider color="light">Frequent Address:</ion-item-divider>
+
+        <ion-item>
+            <ion-label>Street</ion-label>
+            <ion-input [(ngModel)]="address.street" type = "text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Building Number</ion-label>
+            <ion-input [(ngModel)]="address.houseNumber" type = "text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>City</ion-label>
+            <ion-input [(ngModel)]="address.city" type = "text"></ion-input>
+        </ion-item>
+      <ion-item>
+        <ion-label>State</ion-label>
+        <ion-input [(ngModel)]="address.state" type = "text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Zip Code</ion-label>
+        <ion-input [(ngModel)]="address.zipCode" type = "number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Additional Information To Locate (ex: floor#|room#)</ion-label>
+        <ion-textarea clearInput="true" [(ngModel)] ="address.additionalInformation"></ion-textarea>
+      </ion-item>
+    </ion-item-group>
+
+    <div class="align-center">
+        <div class="item item-text-wrap">
+            <button outline (click)="dismiss()" color="danger" round ion-button>Cancel</button>
+            <button outline (click)="addThenDismiss()" color="secondary"  round ion-button>Add</button>
+
+        </div>
+    </div>
+</ion-content>

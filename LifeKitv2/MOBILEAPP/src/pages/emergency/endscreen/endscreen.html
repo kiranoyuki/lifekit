@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar no-border-bottom>
+    </ion-navbar>
+        <h1 color = "teal" align = "center">Emergency Subsided</h1>
+        <p color = "dark" align = "center"> Please fill out the survey below to help us improve our service</p>
+</ion-header>
+<ion-content>
+    <br>
+    <br>
+    <ion-list no-lines>
+	<ion-item text-wrap>
+		<ion-label>How did the emergency end?</ion-label>
+        <ion-select [(ngModel)]="this.emergencyComment.howEnd">
+        	<ion-option value="saved">Patient Save</ion-option>
+        	<ion-option value="notsaved">Patient not saved</ion-option>
+         	<ion-option value="notneeded">Patient did not need assistance</ion-option>
+      	</ion-select>
+    </ion-item>
+    <ion-item text-wrap>
+    	<ion-label>Did an abulance show to the emergency?</ion-label>
+        <ion-select [(ngModel)]="this.emergencyComment.came911">
+        	<ion-option value="yes">Yes</ion-option>
+            <ion-option value="no">No</ion-option>
+            <ion-option value="unsure">Unsure</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item text-wrap>
+    	<ion-label>Did any bystanders/pedestrians help with the emergency?</ion-label>
+        <ion-select [(ngModel)]="this.emergencyComment.byStanderHelp">
+        	<ion-option value="yes">Yes</ion-option>
+            <ion-option value="no">No</ion-option>
+            <ion-option value="unsure">Unsure</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+            <p align = "center">
+              <button (click)="cancel()" ion-button color ="teal" round outline>Cancel</button>
+              <button (click)="finish()" ion-button color ="teal" round outline>Submit</button>
+            </p>
+    </ion-item>
+</ion-list>
+</ion-content>

@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-navbar>
+        <h1 color = "teal" align = "center">Manage Devices</h1>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-list-header>
+            My Devices
+        </ion-list-header>
+
+        <ion-item-sliding>
+            <ion-item>
+                <ion-label>The OX </ion-label>
+                <ion-note item-right> Connected </ion-note>
+            </ion-item>
+            <ion-item-options>
+                <button ion-button color="light" icon-list>
+                    <ion-icon name="more"></ion-icon>
+                    More
+                </button>
+                <button ion-button color="light" icon-list>
+                    <ion-icon name="trash"></ion-icon>
+                    Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+        <ion-item-sliding>
+            <ion-item>
+               <ion-label>Fitbit </ion-label>
+               <ion-note item-right> Not Connected </ion-note>
+            </ion-item>
+            <ion-item-options>
+                <button ion-button color="light" icon-list>
+                    <ion-icon name="more"></ion-icon>
+                    More
+                </button>
+                <button ion-button color="light" icon-list>
+                    <ion-icon name="trash"></ion-icon>
+                    Delete
+                </button>
+            </ion-item-options>
+       </ion-item-sliding>
+
+
+       <ion-list-header>
+           Other Devices
+       </ion-list-header>
+
+       <ion-item-sliding>
+            <ion-item>
+                <ion-label> Test Device </ion-label>
+                <ion-note item-right> Not Connected </ion-note>
+            </ion-item>
+            <ion-item-options>
+                <button ion-button color="light" icon-list>
+                    <ion-icon name="more"></ion-icon>
+                    More
+                </button>
+                <button ion-button color="light" icon-list>
+                    <ion-icon name="trash"></ion-icon>
+                    Delete
+                </button>
+            </ion-item-options>
+       </ion-item-sliding>
+    <p align = "center">
+        <button ion-button color ="teal" round outline>Save</button>
+        <button ion-button color ="teal" round outline>Find New Devices</button>
+    </p>
+</ion-list>
+</ion-content>

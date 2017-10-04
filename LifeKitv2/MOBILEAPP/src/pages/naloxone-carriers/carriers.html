@@ -1,0 +1,33 @@
+<div class="scroll" padding-top id="patient-list">
+
+  <ion-title text-center>Overdosing Patients!</ion-title>
+  <ion-list>
+    <ion-item  ion-item *ngFor="let e of this.emergencies">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <h6 *ngIf="e.user_nickname" class="title">{{e?.user_nickname}}</h6>
+            <h6 *ngIf="!e.user_nickname" class="title">no name</h6>
+
+            <p *ngIf="e.emergency_address">
+              {{e?.emergency_address?.houseNumber}} {{e?.emergency_address.street}}<br>
+              {{e?.emergency_address?.city}} {{e?.emergency_address.state}} {{e?.emergency_address?.zipCode}}
+            </p>
+
+            <p *ngIf="!e.emergency_address">
+              No frequent address...
+            </p>
+            <p *ngIf="e.started_at">{{e?.date | date:'mediumTime'}}</p>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button class="button-style" clear large [color]='light' (click)="this.acceptTask(e)">Assist!</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item *ngIf="this.emergencies.length==0">
+      <p text-center=""> No emergencies at this time...</p>
+    </ion-item>
+  </ion-list>
+</div>
+

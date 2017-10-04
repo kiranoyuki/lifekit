@@ -1,0 +1,36 @@
+.align-center {
+  width: 100%;
+  text-align: center;
+}
+
+.align-center  .item-text-wrap {
+  font-weight: bold;
+  display: inline-block;
+  margin: 10%;
+}
+
+.address-item {
+  display: inline-block;
+  width: 90%;
+}
+.delete-address-button {
+  display: inline-block;
+  width: 10%;
+  height: 100%;
+}
+
+ion-col[width-15] {
+  flex: 0 0 15%;
+  max-width: 15%;
+}
+
+ion-col[width-85] {
+  flex: 0 0 85%;
+  max-width: 85%;
+}
+
+.label-md[stacked], .label-md[floating] {
+  margin-top: 1em;
+  margin-bottom: 0;
+  margin-left: 0;
+}

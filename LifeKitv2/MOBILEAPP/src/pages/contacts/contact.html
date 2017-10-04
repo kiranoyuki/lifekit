@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar>
+        <h1 color ="teal" align = "center">Emergency Contacts</h1>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+    <ion-item-group (click) = 'this.showsContactInformation(contact)' *ngFor="let contact of this.deviceService.getEmergencyContacts().sort()">
+        <ion-item-sliding >
+            <ion-item>
+                <ion-label> {{contact.name}} </ion-label>
+                <ion-icon name = 'contact' item-left color = "teal"></ion-icon>
+            </ion-item>
+            <ion-item-options>
+                <button ion-button icon-list>
+                    <ion-icon name="create" (click) ='this.navCtrl.push("addnewemergencycontact",{person:contact})'></ion-icon>
+                    Edit
+                </button>
+                <button (click) = 'this.deviceService.removeEmergencyContact(contact)'ion-button color = "danger" icon-list>
+                    <ion-icon name="trash"></ion-icon>
+                    Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-item-group>
+    </ion-list>
+
+  <ion-fab right bottom>
+        <button ion-fab color ="teal"><ion-icon name = "add"></ion-icon></button>
+        <ion-fab-list side = "top">
+            <button ion-fab (click)="this.navCtrl.push('addnewemergencycontact')"><ion-icon name = "create"></ion-icon></button>
+            <button ion-fab (click) = "this.navCtrl.push('addfromphoneemergencycontact')"><ion-icon name = "book"></ion-icon></button>
+        </ion-fab-list>
+    </ion-fab>
+</ion-content>

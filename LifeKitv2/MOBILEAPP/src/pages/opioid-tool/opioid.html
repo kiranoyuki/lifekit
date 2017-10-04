@@ -1,0 +1,107 @@
+<ion-header>
+        <ion-navbar no-border-bottom>
+                <h1 color = "teal" align = "center">
+                        Opioid Risk Tool
+                </h1>
+        </ion-navbar>
+
+<ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="about">
+        <ion-segment-button value="tool-about">
+            Information
+        </ion-segment-button>
+        <ion-segment-button value="quiz-about">
+            Tool
+        </ion-segment-button>
+    </ion-segment>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div [ngSwitch]="about">
+        <ion-list *ngSwitchCase="'tool-about'" no-lines>
+            <ion-item text-wrap>
+                <br>
+                <h2 align = "center"> Opioid Risk Tool Introduction </h2>
+                <p align = "center">The Opioid Risk Tool (ORT) is a brief, self-report
+screening tool designed for use with adults patients in primary care
+settings to assess risk for opioid abuse among individuals prescibed opioids
+for treatment of chronic pain. Patients categorized as high-risk are at
+increased likelihood of future abusive drug-related behavior. The ORT can be
+adminsitered and scored in less than 1 minute and has been validated in both
+male and female patients, but not in non-pain populations. </p>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'quiz-about'">
+            <ion-item>
+                <ion-label>Gender</ion-label>
+                <ion-select [(ngModel)]="gender">
+                    <ion-option value="f">Female</ion-option>
+                    <ion-option value="m">Male</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                 <ion-label>Are you between the ages of 16 and 45?</ion-label>
+                 <ion-select [(ngModel)]="age">
+                    <ion-option value="yes">Yes</ion-option>
+                    <ion-option value="no">No</ion-option>
+                 </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Family Abuse History:</ion-label>
+            </ion-item>
+            <ion-item>
+                    <ion-label>Alcohol</ion-label>
+                    <ion-checkbox [(ngModel)]="fAlcohol" color="teal" checked="false"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                    <ion-label>Illegal Drugs</ion-label>
+                    <ion-checkbox [(ngModel)]="fIDrugs" color="teal" checked="false"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                    <ion-label>Prescription Drugs</ion-label>
+                    <ion-checkbox [(ngModel)]="fPDrugs" color="teal" checked="false"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                <ion-label>Personal Abuse History:</ion-label>
+            </ion-item>
+            <ion-item>
+                    <ion-label>Alcohol</ion-label>
+                    <ion-checkbox [(ngModel)]="pAlcohol" color="teal" checked="false"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                    <ion-label>Illegal Drugs</ion-label>
+                    <ion-checkbox [(ngModel)]="pIDrugs" color="teal" checked="false"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                    <ion-label>Prescription Drugs</ion-label>
+                    <ion-checkbox [(ngModel)]="pPDrugs" color="teal" checked="false"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                    <ion-label>Preadolescent Sexual Abuse</ion-label>
+                    <ion-checkbox [(ngModel)]="pSex" color="teal" checked="false"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                    <ion-label>ADD, OCD, Bipolar Disease, or Schizophrenia</ion-label>
+                    <ion-checkbox [(ngModel)]="pDisease" color="teal" checked="false"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                    <ion-label>Depression</ion-label>
+                    <ion-checkbox [(ngModel)]="pSad" color="teal" checked="false"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                <ion-label align="left"> Pain Score Today </ion-label>
+                <ion-range [(ngModel)]="pain" min="1" max="10" step="1" snaps="true" color="teal">
+                    <ion-label range-left> Low  </ion-label>
+                    <ion-label range-right> High </ion-label>
+                </ion-range>
+            </ion-item>
+            <ion-item>
+                <p align = "center">
+                    <button ion-button (click)="submit()" color ="teal" round outline>Submit</button>
+                </p>
+            </ion-item>
+        </ion-list>
+    </div>
+
+</ion-content>

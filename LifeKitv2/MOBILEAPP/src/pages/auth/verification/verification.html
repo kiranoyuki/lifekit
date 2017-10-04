@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <h1 color = "teal" align = "center">Verification Page</h1>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item-group>
+        <ion-item-divider color="light" text-wrap>Please input the verification code sent to you </ion-item-divider>
+        <ion-item>
+            <ion-label>Verification Code</ion-label>
+            <ion-input [(ngModel)] = 'veriCode' type = "number"></ion-input>
+        </ion-item>
+    </ion-item-group>
+
+    <ion-content padding>
+    <p align = "center">
+        <button (click) = 'clickSendVeriCode(this.veriCode)' ion-button color ="teal" round outline>Done</button>
+    </p>
+    <ion-content padding>
+</ion-content>
+

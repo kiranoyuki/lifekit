@@ -1,0 +1,13 @@
+<h2>{{this.testSuite.testSuiteName}}</h2>
+<div *ngFor = 'let test of this.testSuite.tests'>
+  {{test.testingForTitle}}
+  <div *ngIf="test.status == test.TESTING_STATUS.SUCCESS">
+    <button full ion-button color="secondary">{{test.status}} </button>
+  </div>
+  <div *ngIf="test.status ==test.TESTING_STATUS.FAILED">
+    <button full ion-button color="danger">{{test.status}}</button>
+  </div>
+  <div *ngIf="test.status ==test.TESTING_STATUS.PENDING">
+    <button full ion-button color="light">{{test.status}}</button>
+  </div>
+</div>

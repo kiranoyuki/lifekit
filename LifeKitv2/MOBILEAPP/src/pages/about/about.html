@@ -1,0 +1,122 @@
+<ion-header>
+        <ion-navbar no-border-bottom>
+                <h1 align = "center" color = "teal">
+                        Additional Information
+                </h1>
+        </ion-navbar>
+
+<ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="about">
+        <ion-segment-button value="naloxone-about">
+            Naloxone
+        </ion-segment-button>
+        <ion-segment-button value="opioid-about">
+            Opioids
+        </ion-segment-button>
+        <ion-segment-button value="app-about">
+            Application
+        </ion-segment-button>
+    </ion-segment>
+</ion-toolbar>
+</ion-header>
+
+<ion-content padding class = "photos">
+    <div [ngSwitch]="about">
+        <ion-list *ngSwitchCase="'naloxone-about'">
+		<br>
+         <ion-item text-wrap>
+             <h2 align = "center"> Information about Naloxone </h2>
+             <p align = "center">Naloxone is a FDA - approved medication commonly
+referred to as the 'opioid antagonist'. It is used to counteract the
+effects of opioid overdoses, specifically, life-threatening overdose effects
+that would otherwise not let an overdose victim breathe correctly. Naloxone
+is a non-addictive medication that can be administered through the nose and
+purchased over the counter. Naloxone will only work on people that have
+opioids in their system and will not have any negative side effects on
+non-opioid users if administered. It is a temporary drug that wears off in
+minutes.  Naloxone comes in many forms to administer however the most rapid
+is via nasal administration.  We recommend using the nasal form given its
+rapid ease of administration and simplicity.</p>
+             <br>
+             <br>
+             <h2 align = "center"> Information about Administering Naloxone </h2>
+             <p align = "center">
+                1) Remove Naloxone Nasal Spay from packaging. Peel back the sealed tab to open the nasal spray.
+             </p>
+            <img src="assets/N1.jpg" alt="N1">
+             <br>
+             <p align = "center">
+             2) Hold the Naloxone nasal spray with first and
+             middle fingers on either side of the output nozzle, put your thumb on the
+             bottom of the plunger. Do not press plunger until you are ready to
+             administer.
+             </p>
+	         <img src="assets/N2.jpg" alt="N2">
+     		 <br>
+             <p align = "center">
+			3)	Tilt the person's head back and support their neck with
+your hand. Insert the tip of the nozzle into one nostril until your fingers
+positioned on the nozzle are against the bottom of the person's nose.
+			</p>
+	        <img src="assets/N3.jpg" alt="N3">
+ 	    	<br>
+			<p align = "center">
+			4.	Press the plunger with thumb firmly to give dose of Naloxone nasal spray. Remove the nasal spray from nostril after giving the dose. 
+            </p>
+            <img src="assets/N4.jpg" alt="N4">
+        </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'opioid-about'">
+            <br>
+			<ion-item text-wrap>
+				<h2 align = "center"> Information about Opioids </h2>
+					<p align = "center">                   
+Opioids are a class of medications that specializes in pain relief. Opioids
+essentially reduce pain by lessening the intensity of the pain signals
+reaching the brain. Several different medications fall under this class,
+some of the more common ones are hydrocodone, oxycodone, morphine, and
+codeine. These medications are used for an array of different pain
+scenarios, such as, injury-related pain and pain from post-surgical
+procedures. No matter what the opioid prescribed is, excessive use of an
+opioid can be fatal. </p>              
+            </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'app-about'" no-lines>
+			<br>
+            <ion-item text-wrap>
+				<h2 align="center"> LifeKit for Opioid Users</h2>
+                <p align = "center">LifeKit is the first and most innovative
+wearable-integrated, vital monitoring application aimed at helping solve the
+opioid overdose epidemic. The goal of this application is help opioid users
+overcome deadly overdoses by monitoring vital signs through wearable
+technology. LifeKit aims to detect overdoses before fatal incidents happen
+and save lives by sending alerts to nearby emergency responders, naloxone
+carriers, family members, and doctors. </p>
+            </ion-item>
+			<ion-item text-wrap>
+				<p align = "center"> To use the application -  simply download and register within the
+application as an opioid user. After registration is complete, a short
+tutorial and calibration with your integrated wearable device will be
+required. You're all set to go, simply keep the application running the
+background and have your wearable device on you during opioid usage. </p>
+			</ion-item>
+			<br>
+			<ion-item text-wrap>
+				<h2 align ="center"> LifeKit for Naloxone Carriers</h2>
+                <p align = "center">LifeKit is a simple, yet life changing application
+that could help good samaritans become heroes. By carrying naloxone and
+using this application, users will be alerted of nearby potentially fatal
+overdose incidents. Users will, then, be able to respond in the nick of time
+and save overdose victims by administering naloxone and reversing the
+effects of the overdose almost immediately.  </p>
+            </ion-item>
+			<ion-item text-wrap>
+				<p align = "center">To use the application -  simply download and register within the
+application as a naloxone carrier. After registration is complete, you will
+be required to watch a short tutorial on naloxone administering. You're
+all set to go and save lives, simply carry naloxone with you at all times
+and having the application running in the background. </p>
+			</ion-item>
+        </ion-list>
+    </div>
+</ion-content>

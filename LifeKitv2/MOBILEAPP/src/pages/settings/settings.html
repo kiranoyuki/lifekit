@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+        <h1 color = "teal" align = "center">User Settings</h1>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider color="light">Basic Info:</ion-item-divider>
+    <ion-item>
+      <ion-label>First Name:</ion-label>
+      <ion-input  [(ngModel)]="userSettings.firstName" clearInput='true' ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name:</ion-label>
+      <ion-input  [(ngModel)]="userSettings.lastName"  clearInput='true'  ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Age:</ion-label>
+      <ion-input  [(ngModel)]="userSettings.age" clearInput='true'  type="number" ></ion-input>
+    </ion-item>
+  </ion-item-group>
+
+    <ion-item-group>
+        <ion-item-divider color="light">Frequent Addresses:</ion-item-divider>
+            <ion-item *ngFor="let i = index; let addr of userSettings.addresses">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <h6> {{addr.street}} {{addr.houseNumber}}</h6>
+                            <h6>  {{addr.city}} {{addr.state}} {{addr.zipCode}}</h6>
+                            <ion-note>{{addr.additionalInformation}}</ion-note>
+                        </ion-col>
+                        <ion-col width-15>
+                            <button ion-button clear item-end (click)="remove(i)">
+                                <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                            </button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+            </ion-item>
+    </ion-item-group>
+    <div class="align-center">
+        <div class="item item-text-wrap">
+            <button (click) ="presentAddAddressModal()" ion-button color = "teal"  round outline>Add Address</button>
+        </div>
+    </div>
+
+
+</ion-content>

@@ -1,0 +1,14 @@
+<ion-header class = "bgColor">
+    <ion-navbar color="salmon" no-border-bottom>
+      <ion-title>
+        Emergency Alert!
+      </ion-title>
+    </ion-navbar>
+  <p color = "white" align = "center"><b>Sending Emergency Request in: {{this.emergencyUserProc.countDownProc.countingDownTime}}</b></p>
+  <div style="text-align: center;">
+    <button (click) = 'cancelRequest()' ion-button large color ="default" round>Cancel</button>
+  </div>
+</ion-header>
+<ion-content padding class = "bgColor">
+    <Responders-Map [emergencyId]="this.emergencyUserProc.emergencyService.hostingEmergencyId"></Responders-Map>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-menu [content]="myNav">
+  <ion-header>
+    <ion-toolbar color = "teal">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class = "menu-content menuBg">
+    <ion-list no-lines>
+        <br>
+      <button padding-horizontal = "3px" menuClose ion-item *ngFor="let p of menu" (click)="open(p.name)" color = "teal">        
+          <ion-icon padding-right = "2px" *ngIf="p.icon" name = "{{p.icon}}"></ion-icon>
+            {{p.label}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+<ion-nav [root]="rootPage" #myNav swipeBackEnabled="false"></ion-nav>
+

@@ -1,0 +1,6 @@
+[submodule "lifekit_server"]
+	path = lifekit_server
+	url = https://github.com/jmiths/lifekit_server.git
+[submodule "SERVER"]
+	path = SERVER
+	url = https://github.com/jmiths/lifekit_server.git

@@ -1,0 +1,64 @@
+<ion-header>
+    <div style="width: 100%;height: 50% !important;">
+    <h2 color = "dark" align = "center"> Patient Information: </h2>
+      <ion-item>
+        <ion-row>
+          <ion-col col-6>
+            <div>
+              <h6 class="title">{{emergency?.user_nickname}}</h6>
+              <p>{{emergency?.emergency_address?.houseNumber}} {{emergency?.emergency_address?.street}}<br>
+                {{emergency?.emergency_address?.city}} {{emergency?.emergency_address?.state}} {{emergency?.emergency_address?.zipCode}}</p>
+            </div>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button clear item-right large class="button-style" (click)="openMap(emergency?.emergency_lat+','+emergency?.emergency_lng)"><ion-icon name="navigate"></ion-icon></button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+      <!-- timer -->
+      <ion-row>
+        <ion-col text-center>
+          <div >
+            <h1 class="alert-header">{{this.currentTime}}</h1>
+            <ion-label class="label-text-color">estimate seconds</ion-label>
+          </div>
+        </ion-col>
+        <ion-col>
+          <p class="indicate-text">left to save patient</p>
+        </ion-col>
+      </ion-row>
+
+      <!--  Cancel request -->
+      <p align = "center">
+        <button (click)="cancelHelp()" ion-button class="alert-button" round>Cancel Help</button>
+        <button ion-button (click)="saved()">Saved!</button>
+      </p>
+    </div>
+</ion-header>
+
+<ion-content id="naloxone-locator-list">
+  <div style="width: 100%;height: 50% !important;">
+    <ion-item-divider color="light" class="title-text">Nearest Naloxone Locator:</ion-item-divider>
+      <ion-list>
+        <ion-item *ngFor="let p of this.locators">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6 text-wrap>
+                <h6 class="title">{{p?.name}}</h6>
+                <p>{{p?.formatted_address}}</p>
+                <p *ngIf="p?.opening_hours?.open_now">Open Now!</p>
+                <p *ngIf="!p?.opening_hours?.open_now">Closed...</p>
+              </ion-col>
+              <ion-col col-6>
+                <button ion-button clear item-right large class="button-style" (click)="openMap(p?.formatted_address)"><ion-icon name="navigate"></ion-icon></button>
+                <button ion-button clear item-right large class="button-style" (click)="call(p?.formatted_phone_number)"><ion-icon name="call"></ion-icon></button>
+
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-list>
+  </div>
+</ion-content>

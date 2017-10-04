@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-navbar>
+    <h1 color = "teal" align = "center">Comment On Saved Patient</h1>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <label>Response:</label>
+  <ion-textarea [(ngModel)] = 'comment'></ion-textarea>
+  <ion-footer align="center"><button (click)="cancel()" color="danger" round large ion-button>Cancel</button><button (click)="finish()" color="secondary" large  round ion-button>Finish</button></ion-footer>
+</ion-content>

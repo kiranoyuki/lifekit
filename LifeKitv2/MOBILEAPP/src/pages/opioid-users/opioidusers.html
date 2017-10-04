@@ -1,0 +1,44 @@
+<div class="scroll">
+
+    <div [hidden]="!connected">
+      <ion-card>
+        <ion-card-header text-center >
+          <h1>Breath Rate</h1>
+          <h3 id="respiratoryRate" class="alert-header">
+
+          </h3>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas id="lineCanvas"></canvas>
+        </ion-card-content>
+      </ion-card>
+      <div align="center">
+        <button color ='danger' ion-button round *ngIf="this.deviceTriggeredEmergency" (click) = 'this.deviceTriggeredEmergency = false'>Device Triggers Off</button>
+        <button color ='secondary' ion-button round *ngIf="!this.deviceTriggeredEmergency" (click) = 'this.deviceTriggeredEmergency = true'>Device Triggers On</button>
+      </div>
+
+      <div align="center">
+        <button (click) ="open('emergencyrequest')" ion-button round class="emergency-button alert-button">Request Emergency Help</button>
+      </div>
+    </div>
+
+
+
+  <div [hidden]="connected" class="card">
+    <div class="item item-text-wrap">
+      <h5>There is no connected device.</h5>
+      <h5>Please connect to a device now.</h5>
+      <br>
+      <br>
+      <button (click) ="open('devices')" ion-button color = "teal"  round outline>Find Device</button>
+
+    <h5 align = "center">Or</h5>
+    <br>
+  <div align="center">
+    <button (click) ="setRoot('emergencyrequest')" ion-button round class="emergency-button alert-button">Request Emergency Help</button>
+  </div>
+  </div>
+  </div>
+
+
+</div>
